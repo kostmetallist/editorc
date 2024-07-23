@@ -1,0 +1,76 @@
+                  [HELP]
+
+1. <read "filename">            - provides the file containts to the user, w/o memorizing file name;
+
+2. <open "filename">            - the same but w/ keeping file name in memory for further use;
+
+3. <set name "name">
+   <set name "">                - (1) associates current text massive with essential name "name";
+                                  (2) deletes current association;
+
+4. <write "filename">
+   <write>                      - (1) writes current text to the file;
+                                  (2) the same but name will be given from the associated before;
+
+5. <exit>
+   <exit force>                 - (1) editor's shutdown in case of saved text;
+                                  (2) editor's forced termination (it is possible to lose changes);
+
+6. <set tabwidth [value]>       - sets the tabulation length as [value] (default = 8);
+
+7. <set wrap yes>
+   <set wrap no>                - (1) enables wrap mode - strings will be printed fully, w/o cutting;
+                                  (2) disables wrap mode - only parts of strings will be displayed, other parts could be seen by navigation keys;
+
+8. <print pages>                - shows containing of current text according to wrap settings;
+
+9. <print range [from] [to]>
+   <print range [from]>
+   <print range>                - (1) prints out current text from string [from] to string [to] including both of them,
+                                  [from] and [to] must be digital values;
+                                  (2) the same but second border is the end of text;
+                                  (3) prints out whole string massive;
+
+10. <insert after [value] [string]>
+    <insert after [string]>     - (1) inserts string or strings [string] after [value] string of current text,
+                                  [string] may be either like "text" or something bounded by (""").
+
+    If [value] is 0, inputted strings will be placed at the beginning of proceduring text.
+    Example:
+    insert after 2 """
+    spam0
+    spam1
+    """
+                                - (2) the same but inserts to the end of the text;
+
+11. <edit string [string] [place] [symbol]>
+                                - replaces symbol #[place] in the string #[string] by [symbol];
+
+12. <insert symbol [string] [place] [symbol]>
+                                - the same as previous but this command will PLACE [symbol] to the specific place.
+                                  All another chars will be saved;
+
+13. <replace substring [from] [to] "particle" "new">
+    <replace substring [from] "particle" "new">
+    <replace substring "particle" "new">
+    <replace substring [from] [to] (^ or $) "new">
+    <replace substring [from] (^ or $) "new">
+    <replace substring (^ or $) "new">
+                                - (1) replaces the "particle" substring to "new" one in the range of strings #[from] to #[to];
+                                  (2) the same but replacing is applied from [from] till the end;
+				  (3) the same but in whole text;
+				  (4)-(6) the same but '^' means inserting "new" to the each string
+				  beginning, '$' means inserting "new" to the each string ending;
+
+14. <delete range [from] [to]>
+    <delete range [from]>
+    <delete range>              - deletes strings in range [from]-[to]. Relations are analogue to previous cases;
+
+15. <delete braces [from] [to]>
+    <delete braces [from]>
+    <delete braces>             - deletes text between '{' and '}' in the range [from]-[to];
+
+16. <directory>                 - shows current directory's containings;
+
+17. <status>                    - displays general data about text;
+
